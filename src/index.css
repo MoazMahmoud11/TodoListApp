@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: sans-serif;
+}
+@layer utilities {
+    .custom-scroll::-webkit-scrollbar {
+    width: 6.5px; /* عرض الاسكرول */
+}
+    .custom-scroll::-webkit-scrollbar-thumb {
+    background: #6b7280; /* لون */
+    border-radius: 9999px; /* دائري */
+}
+    .custom-scroll::-webkit-scrollbar-thumb:hover {
+    background: rgb(10, 104, 141); /* لون عند الـ hover */
+}
+    .custom-scroll::-webkit-scrollbar-track {
+    background: transparent; /* خلفية المسار */
+}
+}
