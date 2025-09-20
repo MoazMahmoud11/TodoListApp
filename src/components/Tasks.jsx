@@ -1,5 +1,7 @@
 import NewTask from "./NewTask.jsx";
 
+
+
 export default function Tasks({tasks,onAdd,onDelete}) {
     return (
         <section className="sm:px-4 md:px-6 lg:px-8">

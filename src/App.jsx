@@ -1,4 +1,3 @@
-import React from "react";
 import { useState, useEffect } from "react";
 import NoProjectSelected from "./components/NoProjectSelected.jsx";
 import SideBar from "./components/SideBar.jsx";

@@ -2,6 +2,7 @@ import Input from "./Input.jsx";
 import { useRef } from "react";
 import Modal from "./Modal.jsx";
 
+
 export default function NewProject({onAdd,onCancel}) {
 const modal = useRef();
 
