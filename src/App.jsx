@@ -30,6 +30,7 @@ function App() {
                 text: text,
                 projectId: prevState.selectedProjectId,
                 id: taskId,
+                completed: false,
             };
             return {
                 ...prevState,
@@ -85,8 +86,9 @@ function App() {
 
             return {
                 ...prevState,
-                selectedProjectId: undefined,
+                selectedProjectId: projectId,
                 projects: [...prevState.projects, newProject],
+                tasks: prevState.tasks,
             };
         });
     }
@@ -103,6 +105,18 @@ function App() {
         });
     }
 
+    function handleToggleComplete(id) {
+    setProjectsState((prevState) => {
+        return {
+        ...prevState,
+        tasks: prevState.tasks.map((task) =>
+            task.id === id ? { ...task, completed: !task.completed } : task
+        ),
+        };
+    });
+    }
+
+
     const selectedProject = projectsState.projects.find(
         (project) => project.id === projectsState.selectedProjectId
     ); // true Or false
@@ -113,7 +127,8 @@ function App() {
             onDelete={handelDeleteProject}
             onAddTask={handleAddTask}
             onDeleteTask={handleDeleteTask}
-            tasks={projectsState.tasks}
+            tasks={projectsState.tasks.filter(task => task.projectId === projectsState.selectedProjectId)}
+            onToggleComplete={handleToggleComplete}
         />
     );
 
