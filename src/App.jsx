@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import NoProjectSelected from "./components/NoProjectSelected.jsx";
-import SideBar from "./components/SideBar.jsx";
 import SelectedProject from "./components/SelectedProject.jsx";
+import SideBar from "./components/SideBar.jsx";
 import NewProject from "./components/newProject.jsx";
 
 
@@ -141,7 +141,7 @@ function App() {
     }
 
     return (
-        <main className="my-8 h-screen flex gap-8">
+        <main className="my-8 h-screen flex gap-8 overflow-hidden">
             {/* <h1 className="my-8 text-center text-5xl font-bold">Hello World</h1> */}
             <SideBar
                 title="Your Projects"
@@ -151,7 +151,9 @@ function App() {
                 selectedProjectId={projectsState.selectedProjectId}
             />
             {/* <Tasks tasks="Task one"/> */}
+            <section className="flex-1 overflow-y-auto p-8">
             {content}
+            </section>
         </main>
     );
 }
